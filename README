@@ -1,0 +1,10 @@
+-[x] Start loading and cleaning data
+-[x] Univariate analysis on fire data
+-[ ] Scrape weather data and clean
+-[ ] Univariate analysis on weather data
+-[ ] Bivariate analysis with target feature
+-[ ] Logistic regression or classification for baseline model
+-[ ] Continue researching on impact of indigenous knowledge for wildland fires
+-[ ] Continue researching on impact of prescribed burns
+
+
