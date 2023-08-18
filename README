@@ -1,16 +1,3 @@
--[x] Start loading and cleaning data
--[x] Univariate analysis on fire data
--[x] Scrape weather data and clean
--[x] Univariate analysis on weather data
--[x] Bivariate analysis with target feature
--[x] Logistic regression or classification for baseline model
--[ ] Create features that incorporate spatial distance
--[ ] Create features that incorporate time
--[ ] Create Decision Tree and Random Forest models
--[ ] Create KNN model
--[ ] Create a nueral network model
-
-
 Canadian Forest Fires: A Quick Look at the Problem and Data
 
 Forest fires have far-reaching consequences, impacting both human lives and the
