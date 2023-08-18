@@ -1,10 +1,109 @@
 -[x] Start loading and cleaning data
 -[x] Univariate analysis on fire data
--[ ] Scrape weather data and clean
--[ ] Univariate analysis on weather data
--[ ] Bivariate analysis with target feature
--[ ] Logistic regression or classification for baseline model
--[ ] Continue researching on impact of indigenous knowledge for wildland fires
--[ ] Continue researching on impact of prescribed burns
+-[x] Scrape weather data and clean
+-[x] Univariate analysis on weather data
+-[x] Bivariate analysis with target feature
+-[x] Logistic regression or classification for baseline model
+-[ ] Create features that incorporate spatial distance
+-[ ] Create features that incorporate time
+-[ ] Create Decision Tree and Random Forest models
+-[ ] Create KNN model
+-[ ] Create a nueral network model
 
 
+Canadian Forest Fires: A Quick Look at the Problem and Data
+
+Forest fires have far-reaching consequences, impacting both human lives and the
+environment by causing widespread destruction and depleting natural resources. These
+devastating events have gained global attention due to their significant impact. Having
+resided in Canada for the past 15 years, I have personally witnessed how forest fires affect
+various aspects of life, regardless of proximity to the fire zone. While forest fires are not a
+new phenomenon, their severity appears to have escalated in the past decade. Exploring
+avenues to minimize the severity and repercussions of these events presents a potential
+opportunity.
+
+Accurate prediction of forest fire risk holds immense value for residents living within
+affected areas letting them to proactively assess their vulnerability. Government entities can
+leverage such data to make informed decisions on resource allocation, risk mitigation
+strategies, and comprehensive planning, ensuring efficient and effective response efforts.
+Insurance corporations can utilize predictive insights to analyze the risk landscape in
+specific regions. Health organizations can anticipate and address potential health concerns
+arising from the fires themselves or from associated factors like smoke pollution. The
+transportation sector can strategize by considering possible route closures, devising
+alternative routes, and planning supply chain adjustments. Despite the collaborative efforts
+of multiple government entities in combating these immense fires, the scale of the challenge
+often surpasses the available resources, emphasizing the critical need for proactive
+measures and advanced predictive capabilities.
+
+Machine learning is currently employed in monitoring vast land areas, analyzing
+emission data to gather information about potential new fires. A promising opportunity lies
+in leveraging machine learning to forecast the location and intensity of forest fires,
+facilitating efficient resource allocation and strategic planning for future events. This
+approach would enable government entities to proactively initiate early mitigation
+strategies, particularly in crucial areas identified as high-risk zones.
+Historical data from National Resources Canada and Government of Canada for
+wildfires and weather are publicly available. The wildfire data is classified by location, date,
+cause, and severity. There is a separate file that maps out the affected area for each wildfire.
+The dataset contains 400k instances spanning 1930 to 2021. The climate data provides
+information based on location for temperature and precipitation broken down into different
+classifications. Merging both datasets should provide enough features to do a thorough
+analysis. There are also 400,000 instances in the wildfire data. Below are the links to both
+datasets.
+
+https://cwfis.cfs.nrcan.gc.ca/datamart/download/nfdbpnt
+https://climate.weather.gc.ca/historical_data/search_historic_data_e.html
+
+
+Data dictionary for fire dataset
+| Column       | Values      | Description		               	 	 |
+|--------------|-------------|---------------------------------------------------|
+| SRC_ AGENCY  | Categorical | Reporting province/teritory/agency       	 |
+| FIRE_ID      | Object      | Unique identifier given by SRC_AGENCY    	 |
+| FIRENAME     | Object      | Name given to fire occurance             	 |
+| LATITUDE     | Numerical   | Geospatial coordinates of fire occurance 	 |
+| LONGITUDE    | Numerical   | Geospatial coordiantes of fire occurance 	 |
+| YEAR         | Datetime    | Year of fire occurance                    	 |
+| Month        | Datetime    | Month of fire occurance                  	 |
+| Day          | Datetime    | Day of fire occurance                    	 |
+| REP_DATE     | Datetime    | Date when fire occurance was reported    	 |
+| ATTK_DATE    | Datetime    | Date when human intervention started     	 |
+| OUT_DATE     | Datetime    | Date when fire occurance ended           	 |
+| DECADE       | Datetime    | Decade of fire occurance                 	 |
+| SIZE_HA      | Numerical   | Size of fire in hectares                 	 |
+| CAUSE        | Categorical | Cause of fire occurance                  	 |
+| PROTZONE     | Categorical | Describes fire response                  	 |
+| FIRE_TYPE    | Categorical | Describes kind of fire                 	  	 |
+| MORE_INFO    | Object      | Additoinal information about fire occurance 	 |
+| CFS_REF_ID   | Object      | Canadian Forest Service fire occurance identifier |
+| CFS_NOTE1    | Object      | Additonal notes from CFS                          |
+| CFS_NOTE2    | Object      | Additional notes from CFS                         |
+| ACQ_DATE     | Datetime    | Date information was provided to CFS              |
+| SRC_AGY2     | Categorical | Agency that reported information to CFS           |
+| ECOZONE      | Categorical | Ecological zone number                            |
+| ECOZ_REF     | Categorical | Ecological zone number                            |
+| ECOZ_ NAME   | Categorical | Ecological zone name                              |
+| ECOZ_NAME    | Categorical | Ecological zone name in French                    |
+
+
+Data dictionary for weather dataset
+| Column 	| Values 	| Description 						|
+|---------------|---------------|-------------------------------------------------------|
+| Date 		| Datetime 	| 	Month and year of data 				| 
+| Long 		| Numerical 	| Geospatial coordinates of weather station 		|
+| Lat 		| Numerical 	| Geospatial coordiantes of weather station 		|
+| Stn_Name 	| object 	| Weather station name 					|
+| Clim_ID 	| object 	| Climate identifier 					|
+| Prov_or_Ter 	| Categorical 	| Province or Teritory 					| 
+| Tm 		| Numerical 	| Mean Temperature (°C) 				|
+| DwTm 		| Numerical 	| Days without Valid Mean Temperature 			|
+| Tx 		| Numerical 	| Highest Monthly Maximum Temperature (°C) 		|
+| DwTx 		| Numerical 	| Days without Valid Maximum Temperature 		|
+| Tn 		| Numerical 	| Lowest Monthly Minimum Temperature (°C) 		|
+| DwTn 		| Numerical 	| Days without Valid Minimum Temperature 		|
+| S 		| Numerical 	| Snowfall (cm) 					|
+| DwS 		| Numerical 	| Days without Valid Snowfall 				|
+| P 		| Numerical 	| Total Precipitation (mm) 				|
+| DwP 		| Numerical 	| Days without Valid Precipitation 			|
+| Pd 		| Numerical 	| Number of days with Precipitation 1.0 mm or more 	|
+| HDD 		| Numerical 	| Degree Days below 18 °C 				|
+| CDD 		| Numerical 	| Degree Days above 18 °C 				|
