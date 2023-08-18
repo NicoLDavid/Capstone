@@ -116,3 +116,13 @@ Part 3: Initial Modeling
 3.3 Train/Test Split
 3.4 Scaling
 3.5 Baseline Model
+
+
+Files in the Repo:
+1. Capstone: Jupyter notebook containing cleaning, eda, and inital modeling
+2. Forest Fire Presentation Sprint 1: Slides for sprint 1 of capstone project
+3. Forest Fire Presentation Sprint 2: Slides for sprint 2 of capstone project
+4. Tasks: Completed and planned tasks for Capstone project
+
+Not included in file:
+1. CSV data for fire and weather
