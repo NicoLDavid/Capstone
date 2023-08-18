@@ -1,5 +1,6 @@
 Canadian Forest Fires: A Quick Look at the Problem and Data
 
+Introduction: 
 Forest fires have far-reaching consequences, impacting both human lives and the
 environment by causing widespread destruction and depleting natural resources. These
 devastating events have gained global attention due to their significant impact. Having
@@ -94,3 +95,24 @@ Data dictionary for weather dataset
 | Pd 		| Numerical 	| Number of days with Precipitation 1.0 mm or more 	|
 | HDD 		| Numerical 	| Degree Days below 18 °C 				|
 | CDD 		| Numerical 	| Degree Days above 18 °C 				|
+
+
+Table of Contents
+
+Part 1: Introduction
+1.1 Data
+1.2 Data Dictionary
+1.3 Null Values
+1.3 Duplicates
+Part 2: Exploratory Data Analysis
+2.1 Univariate Analysis on Fire Data
+2.2 Univariate Analysis on Weather Data
+2.3 Combining Datasets
+2.4 Bivariate Analysis
+2.5 Correlation
+Part 3: Initial Modeling
+3.1 Binarizing
+3.2 Target Variable Transformation
+3.3 Train/Test Split
+3.4 Scaling
+3.5 Baseline Model
