@@ -4,8 +4,8 @@
 -[x] Univariate analysis on weather data
 -[x] Bivariate analysis with target feature
 -[x] Logistic regression or classification for baseline model
--[ ] Create features that incorporate spatial distance
--[ ] Create features that incorporate time
+-[x] Create features that incorporate spatial distance
+-[x] Create features that incorporate time
 -[ ] Create Decision Tree and Random Forest models
 -[ ] Create KNN model
 -[ ] Create a nueral network model
