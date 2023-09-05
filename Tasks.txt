@@ -1,12 +1,10 @@
--[x] Start loading and cleaning data
--[x] Univariate analysis on fire data
--[x] Scrape weather data and clean
--[x] Univariate analysis on weather data
--[x] Bivariate analysis with target feature
--[x] Logistic regression or classification for baseline model
--[x] Create features that incorporate spatial distance
--[x] Create features that incorporate time
--[ ] Create Decision Tree and Random Forest models
--[ ] Create KNN model
--[ ] Create a nueral network model
+-[ ] Incorporate more weather data such as humidity, cloud cover, and wind.
+-[ ] Research and incorporate data on forest debris.
+-[ ] Research on how to incorporate topography and how it impacts severity.
+-[ ] Try more methods to deal with class imbalance
+-[ ] Experiment on time series models.
+-[ ] Fine tune existing models by looking at false negatives for each model to understand where their weaknesses are. 
+-[ ] Research and possibly create a loss function specific to wildland fires.
+-[ ] Find new data for wildland fires post 2021 and test it against the model.
+-[ ] Deploy a website that can be used by companies and government agencies to assess risk of specific locations.  
 

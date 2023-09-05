@@ -43,6 +43,7 @@ https://climate.weather.gc.ca/historical_data/search_historic_data_e.html
 
 
 Data dictionary for fire dataset
+----------------------------------------------------------------------------------
 | Column       | Values      | Description		               	 	 |
 |--------------|-------------|---------------------------------------------------|
 | SRC_ AGENCY  | Categorical | Reporting province/teritory/agency       	 |
@@ -71,9 +72,11 @@ Data dictionary for fire dataset
 | ECOZ_REF     | Categorical | Ecological zone number                            |
 | ECOZ_ NAME   | Categorical | Ecological zone name                              |
 | ECOZ_NAME    | Categorical | Ecological zone name in French                    |
+----------------------------------------------------------------------------------
 
 
 Data dictionary for weather dataset
+-----------------------------------------------------------------------------------------
 | Column 	| Values 	| Description 						|
 |---------------|---------------|-------------------------------------------------------|
 | Date 		| Datetime 	| 	Month and year of data 				| 
@@ -95,10 +98,66 @@ Data dictionary for weather dataset
 | Pd 		| Numerical 	| Number of days with Precipitation 1.0 mm or more 	|
 | HDD 		| Numerical 	| Degree Days below 18 °C 				|
 | CDD 		| Numerical 	| Degree Days above 18 °C 				|
+-----------------------------------------------------------------------------------------
 
 
-Table of Contents
+Data dictionary for modeling dataset
+-----------------------------------------------------------------------------------------------------------------------------------------
+| Column			| Values	| Description										|
+| ----------------------------- | ------------- | ------------------------------------------------------------------------------------- |
+| LATITUDE 			| Numerical	| Geospatial coordinates of fire occurance						|
+| LONGITUDE 			| Numerical	| Geospatial coordiantes of fire occurance						|
+| Month				| Datetime	| Month of fire occurance								|
+| Day				| Datetime	| Day of fire occurance									|
+| DwTm				| Numerical	| Days without valid Mean Temperature							|
+| Tx				| Numerical	| Highest Monthly Maximum Temperature (°C)						|
+| S				| Numerical	| Snowfall (cm)										|
+| P				| Numerical	| Total Precipitation (mm)								|
+| DwP				| Numerical	| Days without Valid Precipitation							|
+| fcount_1yr_1diff		| Numerical	| # of fire occurances 1 year or less & within 1 lat/long difference			|
+| fcount_1to5yr_1diff		| Numerical	| # of fire occurances between 1 and 5 years & within 1 lat/long difference		|
+| fcount_5to15yr_1diff		| Numerical	| # of fire occurances between 5 and 15 years & within 1 lat/long difference		|
+| fcount_15to45yr_1diff		| Numerical	| # of fire occurances between 15 and 45 years & within 1 lat/long difference		|
+| fcount_1to5yr_1to3diff	| Numerical	| # of fire occurances between 1 and 5 years & between 1 and 3 lat/long difference	|
+| fcount_5to15yr_1to3diff	| Numerical	| # of fire occurances between 5 and 15 years & between 1 and 3 lat/long difference	|
+| fcount_15to45yr_1to3diff	| Numerical	| # of fire occurances between 15 and 45 years & between 1 and 3 lat/long difference	|
+| fcount_1yr_1to3diff		| Numerical	| # of fire occurances 1 year or less & between 1 and 3 lat/long difference		|
+| SRC_ AGENCY			| Categorical	| Reporting province/teritory/agency							|
+| SRC_AGENCY_AB			| Binary	| 1 if reporting agency was Alberta							|
+| SRC_AGENCY_BC			| Binary	| 1 if reporting agency was British Columbia						|
+| SRC_AGENCY_MB			| Binary	| 1 if reporting agency was Manitoba							|
+| SRC_AGENCY_NB			| Binary	| 1 if reporting agency was New Brunswick						|
+| SRC_AGENCY_NS			| Binary	| 1 if reporting agency was Nova Scotia							|
+| SRC_AGENCY_NT			| Binary	| 1 if reporting agency was Northwest Territories					|
+| SRC_AGENCY_ON			| Binary	| 1 if reporting agency was Ontario							|	
+| SRC_AGENCY_PC			| Binary	| 1 if reporting agency was Parks Canada						|
+| SRC_AGENCY_QC			| Binary	| 1 if reporting agency was Quebec							|
+| SRC_AGENCY_SK			| Binary	| 1 if reporting agency was Saskatchewan						|
+| SRC_AGENCY_YT			| Binary	| 1 if reporting agency was Yukon Teritories						|
+| CAUSE_H			| Binary	| 1 if cause of fire occurance is by human activity					|
+| CAUSE_L			| Binary	| 1 if cause of fire occurance is by lightning activity					|
+| CAUSE_RE			| Binary	| 1 if cause of fire occurance is a reignition of a previous occurance			|
+| ECOZ_NAME_Atlantic Maritime	| Binary	| 1 if location of fire occurance is in Atlantic Martime				|
+| ECOZ_NAME_Boreal Cordillera	| Binary	| 1 if location of fire occurance is in Boreal Cordillera				|
+| ECOZ_NAME_Boreal PLain	| Binary	| 1 if location of fire occurance is in Boreal Plain					|
+| ECOZ_NAME_Boreal Shield East	| Binary	| 1 if location of fire occurance is in Boreal Sheild East				|
+| ECOZ_NAME_Boreal Shield West	| Binary	| 1 if location of fire occurance is in Boreal Shield West				|
+| ECOZ_NAME_Hudson Plain	| Binary	| 1 if location of fire occurance is in Hudson Plain					|
+| ECOZ_NAME_MixedWood Plain	| Binary	| 1 if location of fire occurance is in MixedWood Plain					|
+| ECOZ_NAME_Montane Cordillera	| Binary	| 1 if location of fire occurance is in Montane Cordillera				|	
+| ECOZ_NAME_Northern Arctic	| Binary	| 1 if location of fire occurance is in Northern Arctic					|
+| ECOZ_NAME_Pacific Maritime	| Binary	| 1 if location of fire occurance is in Pacific Maritime				|
+| ECOZ_NAME_Prairie		| Binary	| 1 if location of fire occurance is in Prairie						|
+| ECOZ_NAME_Southern Arctic	| Binary	| 1 if location of fire occurance is in Southern Arctic					|
+| ECOZ_NAME_Taiga Cordillera	| Binary	| 1 if location of fire occurance is in Taiga Cordillera				|
+| ECOZ_NAME_Taiga Plain		| Binary	| 1 if location of fire occurance is in Taiga Plain					|
+| ECOZ_NAME_Taiga Shield East	| Binary	| 1 if location of fire occurance is in Taiga Sheild					|
+| ECOZ_NAME_Taiga Shield West	| Binary	| 1 if location of fire occurance is in Taiga Sheild West				|
+| severity			| Categorical	| Severity based on number of hectares burned						|
+-----------------------------------------------------------------------------------------------------------------------------------------
 
+
+Table of Contents for 1st Jupyter Notebook
 Part 1: Introduction
 1.1 Data
 1.2 Data Dictionary
@@ -117,12 +176,31 @@ Part 3: Initial Modeling
 3.4 Scaling
 3.5 Baseline Model
 
+Table of Contents for 2nd Jupyter Notebook
+Part 4: Recap
+4.1 Data
+4.2 Data Dictionary
+4.3 Train/Test Split & Scaling
+4.4 Principal Component Analysis
+4.5 Inital Modeling Results
+Part 5: Advanced Modeling
+5.1 K-Nearest Neighbor
+5.2 Decision Trees
+5.3 Clustering
+5.4 Random Forest
+5.5 Neural Networks
+Part 6: Conclusion
+6.1 Best Model
+6.2 Next Steps
+
 
 Files in the Repo:
 1. Capstone: Jupyter notebook containing cleaning, eda, and inital modeling
 2. Forest Fire Presentation Sprint 1: Slides for sprint 1 of capstone project
 3. Forest Fire Presentation Sprint 2: Slides for sprint 2 of capstone project
+4. Fores Fire Presentation Sprint 3: Slides for sprint 3 of capstone project
 4. Tasks: Completed and planned tasks for Capstone project
+5. Capstone2: Jupyter notebook containing modeling and conclusions
 
 Not included in file:
 1. CSV data for fire and weather
