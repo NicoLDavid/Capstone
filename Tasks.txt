@@ -6,5 +6,3 @@
 -[ ] Fine tune existing models by looking at false negatives for each model to understand where their weaknesses are. 
 -[ ] Research and possibly create a loss function specific to wildland fires.
 -[ ] Find new data for wildland fires post 2021 and test it against the model.
--[ ] Deploy a website that can be used by companies and government agencies to assess risk of specific locations.  
-
